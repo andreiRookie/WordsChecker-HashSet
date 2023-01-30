@@ -15,6 +15,7 @@ public class Main {
         WordsChecker wordChecker = new WordsChecker(TEXT);
 
         System.out.println(wordChecker.hasWord("sed"));
+        System.out.println(wordChecker.hasWord("sedi"));
         System.out.println(wordChecker.hasWord("Lorem"));
         System.out.println(wordChecker.hasWord("pariatur"));
     }

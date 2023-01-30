@@ -2,18 +2,20 @@ import java.util.*;
 
 public class WordsChecker {
 
-    private String text;
+//    private String text;
     private Set<String> setOfWords = new HashSet<>();
-    private boolean isSetOfWordsRetrieved;
+//    private boolean isSetOfWordsRetrieved;
 
     public WordsChecker(String text) {
-        this.text = text;
+//        this.text = text;
+        String[] words = text.split("\\P{IsAlphabetic}+");
+        this.setOfWords.addAll(Arrays.asList(words));
     }
 
     public boolean hasWord(String word) {
-        if (!isSetOfWordsRetrieved) {
-            retrieveSetOfWords();
-        }
+//        if (!isSetOfWordsRetrieved) {
+//            retrieveSetOfWords();
+//        }
 
         if (setOfWords.contains(word)) {
             return true;
@@ -21,18 +23,18 @@ public class WordsChecker {
         return false;
     }
 
-    private void retrieveSetOfWords() {
-        if (!isSetOfWordsRetrieved) {
-            String[] words = text.split("\\P{IsAlphabetic}+");
-            this.setOfWords.addAll(Arrays.asList(words));
-//            for (String txt : words) {
-//                this.setOfWords.add(txt);
-//            }
-            isSetOfWordsRetrieved = true;
-        }
-    }
+//    private void retrieveSetOfWords() {
+//        if (!isSetOfWordsRetrieved) {
+//            String[] words = text.split("\\P{IsAlphabetic}+");
+//            this.setOfWords.addAll(Arrays.asList(words));
+////            for (String txt : words) {
+////                this.setOfWords.add(txt);
+////            }
+//            isSetOfWordsRetrieved = true;
+//        }
+//    }
 
-    public String getText() {
-        return text;
-    }
+//    public String getText() {
+//        return text;
+//    }
 }
